@@ -1,2 +1,2 @@
-# gogmocoin-examples
-Example codes of gogmocoin
+# Sample codes of gogmocoin.
+
