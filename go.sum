@@ -4,6 +4,8 @@ github.com/ijufumi/gogmocoin v0.0.0-20191003114106-ccde710cfbbc h1:ldnzywuYCdhky
 github.com/ijufumi/gogmocoin v0.0.0-20191003114106-ccde710cfbbc/go.mod h1:eio/yev5Y0knjI06bsSu2Si3PMeDHl7lWLBLIbjWROI=
 github.com/ijufumi/gogmocoin v0.0.0-20191003120219-d0727496c5c1 h1:iBDpKYOOSTKr/ibhinJKBcB4GViFQl+IuHXTSGnMC78=
 github.com/ijufumi/gogmocoin v0.0.0-20191003120219-d0727496c5c1/go.mod h1:fIMolK0NN/Eb3NfNegnEO+eUf8GaOYQO4sO2eAe1+Hk=
+github.com/ijufumi/gogmocoin v0.0.1 h1:K1g+zxzwJhoSlecKQmj/N+y1n32Y6K+aI7FqxQbanSo=
+github.com/ijufumi/gogmocoin v0.0.1/go.mod h1:fIMolK0NN/Eb3NfNegnEO+eUf8GaOYQO4sO2eAe1+Hk=
 github.com/joho/godotenv v1.3.0 h1:Zjp+RcGpHhGlrMbJzXTrZZPrWj+1vfm90La1wgB6Bhc=
 github.com/joho/godotenv v1.3.0/go.mod h1:7hK45KPybAkOC6peb+G5yklZfMxEjkZhHbwpqxOKXbg=
 github.com/shopspring/decimal v0.0.0-20180709203117-cd690d0c9e24 h1:pntxY8Ary0t43dCZ5dqY4YTJCObLY1kIXl0uzMv+7DE=
