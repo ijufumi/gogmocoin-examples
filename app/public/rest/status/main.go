@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/ijufumi/gogmocoin/api/public/rest"
+	"github.com/ijufumi/gogmocoin/v2/api/public/rest"
 )
 
 func main() {
