@@ -1,15 +1,14 @@
 package main
 
 import (
+	"github.com/ijufumi/gogmocoin/v2/api/common/consts"
+	"github.com/ijufumi/gogmocoin/v2/api/public/ws/channel/ticker"
 	"log"
 	"time"
-
-	"github.com/ijufumi/gogmocoin/api/common/configuration"
-	"github.com/ijufumi/gogmocoin/api/public/ws/channel/ticker"
 )
 
 func main() {
-	client := ticker.New(configuration.SymbolBTCJPY)
+	client := ticker.New(consts.SymbolBTCJPY)
 	timeoutCnt := 0
 	for {
 		select {

@@ -1,15 +1,14 @@
 package main
 
 import (
+	"github.com/ijufumi/gogmocoin/v2/api/common/consts"
+	"github.com/ijufumi/gogmocoin/v2/api/public/ws/channel/orderbooks"
 	"log"
 	"time"
-
-	"github.com/ijufumi/gogmocoin/api/common/configuration"
-	"github.com/ijufumi/gogmocoin/api/public/ws/channel/orderbooks"
 )
 
 func main() {
-	client := orderbooks.New(configuration.SymbolBTCJPY)
+	client := orderbooks.New(consts.SymbolBTCJPY)
 	timeoutCnt := 0
 	for {
 		select {

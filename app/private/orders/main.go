@@ -1,9 +1,8 @@
 package main
 
 import (
+	"github.com/ijufumi/gogmocoin/v2/api/private"
 	"log"
-
-	"github.com/ijufumi/gogmocoin/api/private"
 )
 
 func main() {

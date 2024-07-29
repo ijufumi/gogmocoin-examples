@@ -1,16 +1,15 @@
 package main
 
 import (
-	"log"
-
-	"github.com/ijufumi/gogmocoin/api/common/configuration"
-	"github.com/ijufumi/gogmocoin/api/private"
+	"github.com/ijufumi/gogmocoin/v2/api/common/consts"
+	"github.com/ijufumi/gogmocoin/v2/api/private"
 	_ "github.com/joho/godotenv/autoload"
+	"log"
 )
 
 func main() {
 	client := private.New()
-	response, err := client.PositionSummary(configuration.SymbolBTCJPY)
+	response, err := client.PositionSummary(consts.SymbolBTCJPY)
 	if err != nil {
 		log.Println(err)
 		return

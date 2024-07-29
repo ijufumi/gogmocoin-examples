@@ -1,11 +1,10 @@
 package main
 
 import (
-	"log"
-
-	"github.com/ijufumi/gogmocoin/api/private"
+	"github.com/ijufumi/gogmocoin/v2/api/private"
 	_ "github.com/joho/godotenv/autoload"
 	"github.com/shopspring/decimal"
+	"log"
 )
 
 func main() {
