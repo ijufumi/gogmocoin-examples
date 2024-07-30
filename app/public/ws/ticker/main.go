@@ -2,18 +2,22 @@ package main
 
 import (
 	"github.com/ijufumi/gogmocoin/v2/api/common/consts"
-	"github.com/ijufumi/gogmocoin/v2/api/public/ws/channel/ticker"
+	"github.com/ijufumi/gogmocoin/v2/api/public/ws"
 	"log"
 	"time"
 )
 
 func main() {
-	client := ticker.New(consts.SymbolBTCJPY)
+	client := ws.NewTicker(consts.SymbolBTCJPY)
 	timeoutCnt := 0
+	err := client.Subscribe()
+	if err != nil {
+		log.Fatalln(err)
+	}
 	for {
 		select {
 		case v := <-client.Receive():
-			log.Printf("msg:%+v", v)
+			log.Printf("msg:%+v\n", v)
 		case <-time.After(180 * time.Second):
 			log.Println("timeout...")
 			timeoutCnt++
