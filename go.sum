@@ -18,6 +18,8 @@ github.com/ijufumi/gogmocoin/v2 v2.1.0 h1:bnQjkpqgwdN5WMBcR2w0D6dIDwKn7FJSqS1xSa
 github.com/ijufumi/gogmocoin/v2 v2.1.0/go.mod h1:UQeOVAkbpy5QcXs4JR2j+7bfAAQNqMwFgyR0nhCk1mY=
 github.com/ijufumi/gogmocoin/v2 v2.1.1 h1:wtjahhZoNuw4/K9++sk4NFUPsZaAKbZF338Kg7qm4zE=
 github.com/ijufumi/gogmocoin/v2 v2.1.1/go.mod h1:UQeOVAkbpy5QcXs4JR2j+7bfAAQNqMwFgyR0nhCk1mY=
+github.com/ijufumi/gogmocoin/v2 v2.2.0 h1:UNOhfmqaqfUvPNoXiRkiyIxcrtqg5gKS01b9byWjI50=
+github.com/ijufumi/gogmocoin/v2 v2.2.0/go.mod h1:3g9w03hDh6XjyGbEq+1a0ZUAmsfOcNtS/ZU2xG4xTq8=
 github.com/joho/godotenv v1.3.0 h1:Zjp+RcGpHhGlrMbJzXTrZZPrWj+1vfm90La1wgB6Bhc=
 github.com/joho/godotenv v1.3.0/go.mod h1:7hK45KPybAkOC6peb+G5yklZfMxEjkZhHbwpqxOKXbg=
 github.com/joho/godotenv v1.5.1 h1:7eLL/+HRGLY0ldzfGMeQkb7vMd0as4CfYvUVzLqw0N0=
