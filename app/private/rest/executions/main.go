@@ -1,14 +1,14 @@
 package main
 
 import (
-	"github.com/ijufumi/gogmocoin/v2/api/private"
+	"github.com/ijufumi/gogmocoin/v2/api/private/rest"
 	_ "github.com/joho/godotenv/autoload"
 	"log"
 	"time"
 )
 
 func main() {
-	client := private.New()
+	client := rest.New()
 	executionsRes, err := client.ExecutionsByOrderID(103804777)
 	if err != nil {
 		log.Println(err)
