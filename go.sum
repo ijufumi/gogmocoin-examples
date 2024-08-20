@@ -1,3 +1,6 @@
+github.com/caarlos0/env v3.5.0+incompatible h1:Yy0UN8o9Wtr/jGHZDpCBLpNrzcFLLM2yixi/rBrKyJs=
+github.com/caarlos0/env/v11 v11.2.2 h1:95fApNrUyueipoZN/EhA8mMxiNxrBwDa+oAZrMWl3Kg=
+github.com/caarlos0/env/v11 v11.2.2/go.mod h1:JBfcdeQiBoI3Zh1QRAWfe+tpiNTmDtcCj/hHHHMx0vc=
 github.com/gorilla/websocket v1.4.1 h1:q7AeDBpnBk8AogcD4DSag/Ukw/KV+YhzLj2bP5HvKCM=
 github.com/gorilla/websocket v1.4.1/go.mod h1:YR8l580nyteQvAITg2hZ9XVh4b55+EU/adAjf1fMHhE=
 github.com/gorilla/websocket v1.5.0 h1:PPwGk2jz7EePpoHN/+ClbZu8SPxiqlu12wZP/3sWmnc=
@@ -26,6 +29,10 @@ github.com/ijufumi/gogmocoin/v2 v2.5.0 h1:eF8MV1Vjw1IrR+Y46ZgWszQBf91U0UzX9OkJd/
 github.com/ijufumi/gogmocoin/v2 v2.5.0/go.mod h1:3g9w03hDh6XjyGbEq+1a0ZUAmsfOcNtS/ZU2xG4xTq8=
 github.com/ijufumi/gogmocoin/v2 v2.5.1 h1:/YY0gHJd9EQkH1SjwjnoiXPNCby6+djFtnWrtGWRJXk=
 github.com/ijufumi/gogmocoin/v2 v2.5.1/go.mod h1:3g9w03hDh6XjyGbEq+1a0ZUAmsfOcNtS/ZU2xG4xTq8=
+github.com/ijufumi/gogmocoin/v2 v2.7.5 h1:OnOl7Lvz8mEyq5aq2YsdXmIeCOlgitJJY2AL1KNphJI=
+github.com/ijufumi/gogmocoin/v2 v2.7.5/go.mod h1:WVyyWwt1VXnxsa2aHkg20cK55kCQa4A6FqwzZKgEIc4=
+github.com/ijufumi/gogmocoin/v2 v2.7.6 h1:uCilOST2xfeApI3Jhsq0hMJICzrzOO6+Tyog1COau5g=
+github.com/ijufumi/gogmocoin/v2 v2.7.6/go.mod h1:WVyyWwt1VXnxsa2aHkg20cK55kCQa4A6FqwzZKgEIc4=
 github.com/joho/godotenv v1.3.0 h1:Zjp+RcGpHhGlrMbJzXTrZZPrWj+1vfm90La1wgB6Bhc=
 github.com/joho/godotenv v1.3.0/go.mod h1:7hK45KPybAkOC6peb+G5yklZfMxEjkZhHbwpqxOKXbg=
 github.com/joho/godotenv v1.5.1 h1:7eLL/+HRGLY0ldzfGMeQkb7vMd0as4CfYvUVzLqw0N0=
