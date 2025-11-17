@@ -1,8 +1,10 @@
 package main
 
 import (
-	"github.com/ijufumi/gogmocoin/v2/api/private/rest"
 	"log"
+
+	"github.com/ijufumi/gogmocoin/v2/api/private/rest"
+	_ "github.com/joho/godotenv/autoload"
 )
 
 func main() {
