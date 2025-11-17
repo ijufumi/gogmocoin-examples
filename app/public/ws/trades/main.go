@@ -26,9 +26,7 @@ func main() {
 			break
 		}
 	}
-	e := client.Unsubscribe()
-	if e != nil {
-		log.Println(e)
-		return
+	if err := client.Unsubscribe(); err != nil {
+		log.Fatal(err)
 	}
 }

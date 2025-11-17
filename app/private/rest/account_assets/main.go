@@ -1,12 +1,14 @@
 package main
 
 import (
-	"github.com/ijufumi/gogmocoin/v2/api/private/rest"
 	"log"
+
+	"github.com/ijufumi/gogmocoin/v2/api/private/rest"
+	_ "github.com/joho/godotenv/autoload"
 )
 
 func main() {
-	client := rest.NewWithKeys("YOUR_API_KEY", "YOUR_API_SECRET")
+	client := rest.New()
 	accountAssetsRes, err := client.AccountAssets()
 	if err != nil {
 		log.Println(err)
