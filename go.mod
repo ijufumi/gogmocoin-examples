@@ -1,9 +1,9 @@
 module github.com/ijufumi/gogmocoin-examples
 
-go 1.21
+go 1.23
 
 require (
-	github.com/ijufumi/gogmocoin/v2 v2.9.1
+	github.com/ijufumi/gogmocoin/v2 v2.10.0
 	github.com/joho/godotenv v1.5.1
 	github.com/shopspring/decimal v1.4.0
 )
