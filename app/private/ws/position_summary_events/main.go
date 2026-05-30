@@ -1,30 +1,15 @@
 package main
 
 import (
-	"github.com/ijufumi/gogmocoin/v2/api/private/ws"
 	"log"
-	"time"
+
+	"github.com/ijufumi/gogmocoin-examples/internal/wsrunner"
+	"github.com/ijufumi/gogmocoin/v2/api/private/ws"
 )
 
 func main() {
 	client := ws.NewPositionSummaryEvents(true, true)
-	if err := client.Subscribe(); err != nil {
-		log.Fatal(err)
-	}
-	timeoutCnt := 0
-	for {
-		select {
-		case v := <-client.Receive():
-			log.Printf("msg:%+v\n", v)
-		case <-time.After(180 * time.Second):
-			log.Println("timeout...")
-			timeoutCnt++
-		}
-		if timeoutCnt > 20 {
-			break
-		}
-	}
-	if err := client.Unsubscribe(); err != nil {
+	if err := wsrunner.Run(client.Subscribe, client.Receive, client.Unsubscribe); err != nil {
 		log.Fatal(err)
 	}
 }

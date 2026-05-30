@@ -10,11 +10,9 @@ func main() {
 	client := rest.New()
 
 	orderbooks, err := client.OrderBooks(consts.SymbolBCHJPY)
-
 	if err != nil {
 		log.Println(err)
 		return
 	}
-
-	log.Printf("[result]%+v", orderbooks)
+	log.Printf("result:%+v", orderbooks)
 }

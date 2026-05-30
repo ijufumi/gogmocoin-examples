@@ -22,7 +22,7 @@ app/
 
 ### 必要なもの
 
-- Go 1.21以上
+- Go 1.25以上
 - GMO CoinのAPIキーとシークレット（プライベートAPIを使用する場合）
 
 ### インストール
@@ -44,10 +44,12 @@ cp .env.example .env
 2. `.env` ファイルを編集し、あなたのAPIキーとシークレットを設定:
 
 ```
-DEBUG_MODE=true
+DEBUG_MODE=false
 API_KEY=your_actual_api_key
 API_SECRET=your_actual_api_secret
 ```
+
+**注意**: `DEBUG_MODE=true` にするとリクエスト/レスポンスの詳細（署名済みの API-KEY ヘッダを含む）が標準出力に出力されます。認証情報がログに残るため、通常は `false` のままにし、デバッグ時のみ一時的に有効化してください。
 
 **注意**: `.env` ファイルにはAPIの認証情報が含まれるため、絶対にgitにコミットしないでください。このファイルは既に `.gitignore` に含まれています。
 
@@ -165,7 +167,18 @@ func main() {
 サンプルコードでは、適切なエラーハンドリングを実装しています:
 
 - REST API: エラーが発生した場合は `log.Println` でログを出力してreturn
-- WebSocket API: 重大なエラーの場合は `log.Fatal` で終了
+- WebSocket API: 共通の受信ループ（`internal/wsrunner`）を使用し、`Ctrl-C`（SIGINT/SIGTERM）を受信すると購読を解除してから安全に終了します
+
+### WebSocket の共通受信ループ
+
+WebSocket のサンプルは、購読・受信ループ・購読解除の共通処理を `internal/wsrunner` パッケージに集約しています。これにより各サンプルはクライアント生成と `wsrunner.Run` の呼び出しだけで完結し、シグナル受信時の graceful shutdown も共通化されています:
+
+```go
+client := ws.NewTicker(consts.SymbolBTCJPY)
+if err := wsrunner.Run(client.Subscribe, client.Receive, client.Unsubscribe); err != nil {
+    log.Fatal(err)
+}
+```
 
 ## ライセンス
 
