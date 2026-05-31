@@ -1,32 +1,16 @@
 package main
 
 import (
+	"log"
+
+	"github.com/ijufumi/gogmocoin-examples/internal/wsrunner"
 	"github.com/ijufumi/gogmocoin/v2/api/common/consts"
 	"github.com/ijufumi/gogmocoin/v2/api/public/ws"
-	"log"
-	"time"
 )
 
 func main() {
 	client := ws.NewOrderBooks(consts.SymbolBTCJPY)
-	timeoutCnt := 0
-	err := client.Subscribe()
-	if err != nil {
-		log.Fatalln(err)
-	}
-	for {
-		select {
-		case v := <-client.Receive():
-			log.Printf("msg:%+v\n", v)
-		case <-time.After(180 * time.Second):
-			log.Println("timeout...")
-			timeoutCnt++
-		}
-		if timeoutCnt > 20 {
-			break
-		}
-	}
-	if err := client.Unsubscribe(); err != nil {
+	if err := wsrunner.Run(client.Subscribe, client.Receive, client.Unsubscribe); err != nil {
 		log.Fatal(err)
 	}
 }
