@@ -1,9 +1,8 @@
 // Package wsrunner は WebSocket サンプルで共通して使う購読ループを提供する。
 //
-// gogmocoin の WebSocket クライアントはいずれも Subscribe / Receive / Unsubscribe を
+// gogmocoin の WebSocket クライアントはいずれも Subscribe / Stream / Unsubscribe を
 // 備えており、サンプルごとに「購読 → 受信ループ → 購読解除」のコードがほぼ同一になる。
-// その重複と、Ctrl-C 時に Unsubscribe が呼ばれない問題、Receive() をループ内で
-// 何度も呼ぶことによる goroutine リークをまとめて解消するためのヘルパー。
+// その重複と、Ctrl-C 時に Unsubscribe が呼ばれない問題をまとめて解消するためのヘルパー。
 package wsrunner
 
 import (
@@ -26,9 +25,10 @@ const (
 //   - SIGINT / SIGTERM（Ctrl-C 等）を受信したとき
 //   - idleTimeout が maxIdleCount 回連続したとき
 //
-// receive は「受信チャネルを返す関数」を渡す。Receive() はチャネル取得のたびに
-// 内部で goroutine を起動するため、Subscribe 後に一度だけ呼んで使い回す。
-func Run[T any](subscribe func() error, receive func() <-chan T, unsubscribe func() error) error {
+// stream は「受信チャネルを返す関数」（クライアントの Stream() ）を渡す。
+// Stream() は Subscribe 中はチャネルを内部でメモ化して同じものを返すが、
+// このヘルパーでも Subscribe 後に一度だけ呼んで使い回す。
+func Run[T any](subscribe func() error, stream func() <-chan T, unsubscribe func() error) error {
 	if err := subscribe(); err != nil {
 		return err
 	}
@@ -42,14 +42,14 @@ func Run[T any](subscribe func() error, receive func() <-chan T, unsubscribe fun
 	ctx, stop := signal.NotifyContext(context.Background(), syscall.SIGINT, syscall.SIGTERM)
 	defer stop()
 
-	stream := receive()
+	ch := stream()
 	idleCount := 0
 	for {
 		select {
 		case <-ctx.Done():
 			log.Println("signal received, shutting down...")
 			return nil
-		case v := <-stream:
+		case v := <-ch:
 			log.Printf("msg:%+v\n", v)
 		case <-time.After(idleTimeout):
 			log.Println("timeout...")

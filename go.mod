@@ -3,7 +3,7 @@ module github.com/ijufumi/gogmocoin-examples
 go 1.25
 
 require (
-	github.com/ijufumi/gogmocoin/v2 v2.12.1
+	github.com/ijufumi/gogmocoin/v2 v2.13.0
 	github.com/joho/godotenv v1.5.1
 	github.com/shopspring/decimal v1.4.0
 )

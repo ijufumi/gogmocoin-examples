@@ -9,7 +9,7 @@ import (
 
 func main() {
 	client := ws.NewPositionSummaryEvents(true, true)
-	if err := wsrunner.Run(client.Subscribe, client.Receive, client.Unsubscribe); err != nil {
+	if err := wsrunner.Run(client.Subscribe, client.Stream, client.Unsubscribe); err != nil {
 		log.Fatal(err)
 	}
 }
