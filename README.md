@@ -175,7 +175,7 @@ WebSocket のサンプルは、購読・受信ループ・購読解除の共通�
 
 ```go
 client := ws.NewTicker(consts.SymbolBTCJPY)
-if err := wsrunner.Run(client.Subscribe, client.Receive, client.Unsubscribe); err != nil {
+if err := wsrunner.Run(client.Subscribe, client.Stream, client.Unsubscribe); err != nil {
     log.Fatal(err)
 }
 ```

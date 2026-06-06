@@ -10,7 +10,7 @@ import (
 
 func main() {
 	client := ws.NewTicker(consts.SymbolBTCJPY)
-	if err := wsrunner.Run(client.Subscribe, client.Receive, client.Unsubscribe); err != nil {
+	if err := wsrunner.Run(client.Subscribe, client.Stream, client.Unsubscribe); err != nil {
 		log.Fatal(err)
 	}
 }
